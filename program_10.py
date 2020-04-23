@@ -227,46 +227,46 @@ if __name__ == '__main__':
         
         print("-"*50, "\n\nSummary of monthly metrics...\n\n", MoDataDF[file].describe(), "\n\nAnnual Monthly Averages...\n\n", MonthlyAverages[file])
 
-#Annual metrics to csv      
-Tippe = WYDataDF['Tippe']
-Tippe['Station'] = 'Tippe'
-
-Wildcat = WYDataDF['Wildcat']
-Wildcat['Station'] = 'Wildcat'
-
-Wildcat.append(Tippe)
-Wildcat.to_csv('Annual_Metrics.csv', sep = ',' )
-
-#monthly metrics to csv
-TippeMo = MoDataDF['Tippe']
-TippeMo['Station'] = 'Tippe'
-
-WildcatMo = MoDataDF['Wildcat']
-WildcatMo['Station'] = 'Wildcat'
-
-WildcatMo.append(TippeMo)
-WildcatMo.to_csv('Monthly_Metrics.csv', sep = ',' )
-
-#annual averages to .txt
-TippeAV = AnnualAverages['Tippe']
-TippeAV['Station'] = 'Tippe'
-
-WildcatAV = AnnualAverages['Wildcat']
-WildcatAV['Station'] = 'Wildcat'
-
-
-join =[WildcatAV , TippeAV]
-concat = pd.concat(join)
-concat.to_csv('Average_Annual_Metrics.txt', sep = '\t',index = True )
-
-#monthly averages to txt
-TippeAVMo = MonthlyAverages['Tippe']
-TippeAVMo['Station'] = 'Tippe'
-
-WildcatAVMo = MonthlyAverages['Wildcat']
-WildcatAVMo['Station'] = 'Wildcat'
-
-
-join2 =[WildcatAVMo , TippeAVMo]
-concat2 = pd.concat(join)
-concat2.to_csv('Average_Monthly_Metrics.txt', sep = '\t',index = True )
+    #Annual metrics to csv      
+    Tippe = WYDataDF['Tippe']
+    Tippe['Station'] = 'Tippe'
+    
+    Wildcat = WYDataDF['Wildcat']
+    Wildcat['Station'] = 'Wildcat'
+    
+    Wildcat.append(Tippe)
+    Wildcat.to_csv('Annual_Metrics.csv', sep = ',' )
+    
+    #monthly metrics to csv
+    TippeMo = MoDataDF['Tippe']
+    TippeMo['Station'] = 'Tippe'
+    
+    WildcatMo = MoDataDF['Wildcat']
+    WildcatMo['Station'] = 'Wildcat'
+    
+    WildcatMo.append(TippeMo)
+    WildcatMo.to_csv('Monthly_Metrics.csv', sep = ',' )
+    
+    #annual averages to .txt
+    TippeAV = AnnualAverages['Tippe']
+    TippeAV['Station'] = 'Tippe'
+    
+    WildcatAV = AnnualAverages['Wildcat']
+    WildcatAV['Station'] = 'Wildcat'
+    
+    
+    join =[WildcatAV , TippeAV]
+    concat = pd.concat(join)
+    concat.to_csv('Average_Annual_Metrics.txt', sep = '\t',index = True )
+    
+    #monthly averages to txt
+    TippeAVMo = MonthlyAverages['Tippe']
+    TippeAVMo['Station'] = 'Tippe'
+    
+    WildcatAVMo = MonthlyAverages['Wildcat']
+    WildcatAVMo['Station'] = 'Wildcat'
+    
+    
+    join2 =[WildcatAVMo , TippeAVMo]
+    concat2 = pd.concat(join)
+    concat2.to_csv('Average_Monthly_Metrics.txt', sep = '\t',index = True )
