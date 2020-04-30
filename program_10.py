@@ -234,7 +234,7 @@ if __name__ == '__main__':
     Wildcat = WYDataDF['Wildcat']
     Wildcat['Station'] = 'Wildcat'
     
-    Wildcat.append(Tippe)
+    Wildcat = Wildcat.append(Tippe)
     Wildcat.to_csv('Annual_Metrics.csv', sep = ',' )
     
     #monthly metrics to csv
@@ -244,7 +244,7 @@ if __name__ == '__main__':
     WildcatMo = MoDataDF['Wildcat']
     WildcatMo['Station'] = 'Wildcat'
     
-    WildcatMo.append(TippeMo)
+    WildcatMo =  WildcatMo.append(TippeMo)
     WildcatMo.to_csv('Monthly_Metrics.csv', sep = ',' )
     
     #annual averages to .txt
